@@ -72,3 +72,68 @@ SELECT
  SELECT
  SUM(TotalAmount) AS TotalAmount_sum
  FROM Orders
+
+--11.Display the first 5 records in SQL
+SELECT TOP 3 *
+FROM Employees
+
+--12Find distinct values in a column
+
+SELECT DISTINCT 
+DepartmentID
+FROM Employees
+
+--13.Filter records with multiple conditions using AND
+
+SELECT *
+FROM Employees
+WHERE Salary >100000 AND Gender = 'Male'
+
+--14 Filter records with multiple conditions using OR
+SELECT *
+FROM Employees
+WHERE Salary >100000 OR Gender = 'Female' 
+
+--15.Find records where a column value is NULL
+SELECT *
+FROM Employees
+WHERE ManagerID Is NULL
+
+--16.Find records where a column value is NOT NULL
+SELECT *
+FROM Employees
+WHERE ManagerID IS NOT NULL
+
+--17.Find records using the LIKE operator
+/*
+
+'A%'   Starts with "A" (e.g., Albert, Amanda, Amy, or just "A").
+'%son' Ends with "son" (e.g., Jason, Jackson, Tyson).
+'%or%' Has "or" anywhere in the middle, start, or end (e.g., Jordan, Taylor, Ortiz).
+
+The _  represents exactly one single character.
+'A_'   Starts with "A" and is exactly 2 letters long (e.g., Al, An).
+'_a%'  Has "a" as the second letter, followed by anything (e.g., Sam, Daniel, Catherine).
+'___' Value must be exactly 3 characters long (e.g., Tom, Ben, Amy).
+
+*/
+SELECT *
+FROM Employees
+WHERE FirstName LIKE '_A%' -- _ means 1 , % means 0 to many.
+
+--18.Find records using the IN operator
+-- IN for multiple OR for same column
+SELECT*
+FROM Employees
+WHERE Gender IN('Male','Female')
+
+--19.Find records within a range using BETWEEN
+SELECT*
+FROM Employees
+WHERE Salary BETWEEN 50000 AND 80000
+
+--20.Alias column names
+SELECT 
+FirstName AS 'First Name', 
+Salary AS 'Annual Salary'
+FROM employees;
