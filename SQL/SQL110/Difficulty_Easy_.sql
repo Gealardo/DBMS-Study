@@ -137,3 +137,17 @@ SELECT
 FirstName AS 'First Name', 
 Salary AS 'Annual Salary'
 FROM employees;
+
+--SHIFTED TO POSTGREEsQL
+--22 CONCATE
+SELECT ,
+  CONACATE(firstname," ",lastname)
+FROM customer 
+-- --22,23.Convert text to uppercase
+SELECT 
+ UPPER(firstname),
+ LOWER(lastname)
+FROM customers 
+
+--24 CURRENT DATE
+SELECT CURRENT_DATE;
