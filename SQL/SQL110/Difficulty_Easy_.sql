@@ -151,3 +151,16 @@ FROM customers
 
 --24 CURRENT DATE
 SELECT CURRENT_DATE;
+
+--name start with A
+SELECT *
+FROM employees
+WHERE firstname LIKE 'A%';
+
+--NO. OF EMPLOYEE
+SELECT 
+ departmentid,
+ COUNT(*) AS employee_count
+ FROM employees
+ GROUP BY departmentid
+ ORDER BY departmentid ASC
